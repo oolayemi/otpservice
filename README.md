@@ -9,5 +9,6 @@
 
 ## OTP Service
 
-This project is a link to article that can be found at <a href="https://medium.com/@olayemiolaomo/creating-your-own-otp-service-laravel-5b7d1460ce94" alt="Medium"></a> and at <a 
-href="https://medium.com/@olayemiolaomo/creating-your-own-otp-service-laravel-5b7d1460ce94" alt="Hashnode"></a>
+This project is a link to article that can be found at 
+<a href="https://medium.com/@olayemiolaomo/creating-your-own-otp-service-laravel-5b7d1460ce94" alt="Medium"></a> and at 
+<a href="https://medium.com/@olayemiolaomo/creating-your-own-otp-service-laravel-5b7d1460ce94" alt="Hashnode"></a>
