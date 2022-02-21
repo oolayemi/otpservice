@@ -41,42 +41,32 @@ class OtpController extends Controller
         $user = $request->user();
 
         $userOtp = $user->otp;
-        if ($userOtp->is_used) {
 
+        if (!$userOtp || $userOtp->is_used || $userOtp->expires_at < now()) {
             return response()->json([
                 'status' => false,
                 'message' => "An error occurred",
-                'error' => "Otp has already been used, pls request for another otp"
-            ], 401);
-
-        } elseif ($userOtp->expires_at < now()) {
-
-            return response()->json([
-                'status' => false,
-                'message' => "An error occurred",
-                'error' => "Otp has expired, kindly request for another otp"
-            ], 401);
-
-        } else {
-            if ($userOtp->otp == $otp) {
-
-        // perform whatever operation you want to do when otp is verified
-
-                $userOtp->update([
-                    'is_used' => true
-                ]);
-
-                return response()->json([
-                    'status' => true,
-                    'message' => "Otp verified"
-                ], 200);
-            }
-
-            return response()->json([
-                'status' => false,
-                'message' => "An error occurred",
-                'error' => "Otp is incorrect, please try again"
-            ], 401);
+                'error' => "Invalid OTP, kindly request for another one"
+            ], 400);
         }
+
+        if ($userOtp->otp == $otp) {
+
+            // perform whatever operation you want to do when otp is verified
+
+            $userOtp->update([
+                'is_used' => true
+            ]);
+
+            return response()->json([
+                'status' => true,
+                'message' => "Otp verified"
+            ], 200);
+        }
+        return response()->json([
+            'status' => false,
+            'message' => "An error occurred",
+            'error' => "Otp is incorrect, please try again"
+        ], 400);
     }
 }
