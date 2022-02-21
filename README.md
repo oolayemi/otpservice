@@ -6,3 +6,8 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
+
+## OTP Service
+
+This project is a link to article that can be found at <a href="https://medium.com/@olayemiolaomo/creating-your-own-otp-service-laravel-5b7d1460ce94" alt="Medium"></a> and at <a 
+href="https://medium.com/@olayemiolaomo/creating-your-own-otp-service-laravel-5b7d1460ce94" alt="Hashnode"></a>
